@@ -1,0 +1,38 @@
+<table class="table table-responsive table-hover">
+    <tr>
+        <th class="text-center">Id</th>
+        <th class="text-center">Title</th>
+        <th class="text-center">Budget</th>
+        <th class="text-center">Duration</th>
+        <th class="text-center">Partners</th>
+        <th class="text-center">Domain</th>
+        <th class="text-center">Objective</th>
+        <th class="text-center">Stages</th>
+    </tr>
+    <tr ng-repeat="project in projects">
+        <td class="text-center">
+            {{project.id}}
+        </td>
+        <td class="text-center">
+            {{project.title}}
+        </td>
+        <td class="text-center">
+            {{project.budget}}
+        </td>
+        <td class="text-center">
+            {{project.duration}}
+        </td>
+        <td class="text-center">
+         <div ng-repeat="partner in project.partners" ng-class="{leaderstyle: partner.leader===true}">{{partner.name}}</div>
+        </td>
+        <td class="text-center">
+            {{project.domain}}
+        </td>
+        <td class="text-center">
+            {{project.objective}}
+        </td>
+        <td class="text-center">
+         <div ng-repeat="stage in project.stages">{{stage.name}}</div>
+        </td>
+    </tr>
+</table>
